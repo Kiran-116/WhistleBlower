@@ -15,7 +15,6 @@ exports.registerUser = async(req,res,next)=>{
         sendToken(user,201,res);
         console.log('user registered successfully')
 }
-  
 
 // login a user
 exports.loginUser = async (req,res,next)=>{
@@ -44,7 +43,6 @@ exports.loginUser = async (req,res,next)=>{
 
     console.log('successfully login')
 }
-
 
 // logout 
 exports.logout = async(req,res,next)=>{
