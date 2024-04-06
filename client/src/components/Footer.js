@@ -10,7 +10,7 @@ import {
   Divider,
 } from '@chakra-ui/react';
 
-const Footer = () => {
+const   Footer = () => {
   return (
     <Box bg="blue.500" py={8} px={8} color="white">
         <Container maxW="container.xl">
@@ -19,7 +19,7 @@ const Footer = () => {
             <Heading as="h3" size="lg" mb={4}>
                 About Us
             </Heading>
-            <Text fontSize="md">We are committed to transparency and fighting corruption.</Text>
+            <Text fontSize="md">We are committed to transparency and fighting against misconduct, corruption, or illegal activities. </Text>
             </GridItem>
             <GridItem>
             <Heading as="h3" size="lg" mb={4}>
