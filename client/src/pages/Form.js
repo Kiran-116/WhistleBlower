@@ -11,6 +11,7 @@ import {
   Box,
   Flex
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 export default function HookForm() {
   const {
@@ -105,9 +106,12 @@ export default function HookForm() {
             </FormErrorMessage>
         </FormControl>
 
-        <Button mt={4} colorScheme="teal" isLoading={isSubmitting} type="submit">
-            Submit
-        </Button>
+        <Link to="/">
+          
+          <Button mt={4} colorScheme="teal" isLoading={isSubmitting} type="submit">
+              Submit
+          </Button>
+        </Link>
         </form>
     </Box>
   );

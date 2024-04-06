@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Box,
   Container,
@@ -18,7 +19,6 @@ import {
   Image,
   Center,
   Divider,
-  Link
 } from '@chakra-ui/react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -40,7 +40,6 @@ function LandingPage() {
       {/* Image-text slider */}
       <Box py={8}>
         <ImageSlider />
-        
       </Box>
 
       {/* Content */}
@@ -53,9 +52,11 @@ function LandingPage() {
           Empowering whistleblowers to report misconduct anonymously
         </Text>
         <Box textAlign="center" mb={8}>
+        <Link to="/form">
           <Button colorScheme="teal" size="lg" mr={4}>
             Get Started
           </Button>
+        </Link>
         </Box>
         <Box>
           <Heading as="h2" size="lg" mb={4}>
@@ -102,9 +103,11 @@ function LandingPage() {
       
       {/* Call to action */}
       <Center m={8}>
-        <Button colorScheme="blue" size="lg" borderRadius="full" px={8} py={6}>
-          Report Anonymously
-        </Button>
+        <Link to="/form">
+          <Button colorScheme="blue" size="lg" borderRadius="full" px={8} py={6}>
+            Report Anonymously
+          </Button>
+        </Link>
       </Center>
 
       {/* FAQ */}
