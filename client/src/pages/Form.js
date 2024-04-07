@@ -16,7 +16,11 @@ import { ReCAPTCHA } from 'react-google-recaptcha';
 
 export default function MultiStepForm() {
   const [step, setStep] = useState(1); // Track current step
-  const [states, setStates] = useState([]); // State options
+  const [states, setStates] = useState([
+    { id: 1, name: 'State 1' },
+    { id: 2, name: 'State 2' },
+    { id: 3, name: 'State 3' }
+  ]); // State options
   const [districts, setDistricts] = useState([]); // District options
   const [selectedState, setSelectedState] = useState(""); // Selected state
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,29 +33,24 @@ export default function MultiStepForm() {
   } = useForm();
 
   useEffect(() => {
-    // Fetch states data from API
-    const fetchStates = async () => {
-      try {
-        const response = await axios.get("https://api.url/s tates"); // Replace with actual API URL
-        setStates(response.data);
-      } catch (error) {
-        console.error("Error fetching states:", error);
-      }
-    };
-
-    fetchStates();
+    // Set initial districts for the first state
+    setDistricts([
+      { id: 1, name: 'District 1.1' },
+      { id: 2, name: 'District 1.2' },
+      { id: 3, name: 'District 1.3' }
+    ]);
   }, []);
 
   useEffect(() => {
     // Fetch districts data based on selected state from API
     const fetchDistricts = async () => {
       if (selectedState) {
-        try {
-          const response = await axios.get(`https://api.url/districts/${selectedState}`); // Replace with actual API URL
-          setDistricts(response.data);
-        } catch (error) {
-          console.error("Error fetching districts:", error);
-        }
+        // For simplicity, let's assume each state has the same districts
+        setDistricts([
+          { id: 1, name: 'District 1.1' },
+          { id: 2, name: 'District 1.2' },
+          { id: 3, name: 'District 1.3' }
+        ]);
       }
     };
 
@@ -254,9 +253,11 @@ export default function MultiStepForm() {
             <Button mt={4} colorScheme="teal" onClick={prevStep}>
               Previous
             </Button>
-            <Button mt={4} ml={4} colorScheme="teal" isLoading={isSubmitting} type="submit">
-              Submit
-            </Button>
+            <Link to="/">
+              <Button mt={4} ml={4} colorScheme="teal" isLoading={isSubmitting} type="submit">
+                Submit
+              </Button>
+            </Link>
           </>
         )}
       </form>
