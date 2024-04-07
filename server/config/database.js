@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDatabase = () => {
     try {
-        mongoose.connect(process.env.DATABASE_URL,
+        mongoose.connect("mongodb://localhost:27017/WhitsleBlower",
         {
             // useNewUrlParser:true,
             // useUnifiedTopology:true,
